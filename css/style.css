@@ -140,12 +140,12 @@ margin-top:.2rem;
 /* Modal Content (image) */
 .modal-carousel{
     display: flex;
-    height: 16rem;
+    height: 28rem;
 }
 .modal-content.infocus{
     margin: auto;
     max-width: 90%;
-    max-height: 15rem;
+    max-height: 28rem;
     transition: margin 1s;
     display:block;
 }
