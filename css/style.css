@@ -1,0 +1,549 @@
+/* Common styles */
+:root {
+    --darkGrey: rgba(17, 17, 17);
+    --midGrey: rgba(25,25,25);
+    --lightGrey: rgba(34, 34, 34);
+    --primary-color:rgb(156, 1, 1);
+    --secondary-color:white;
+}
+* {
+  box-sizing: border-box;
+}
+.dark {
+    background-color: rgb(17, 17, 17);
+    font-family: Calibri;
+    color: var(--secondary-color);
+    margin:0;
+    padding:0 0.5rem;
+    height: 100vh;
+}
+
+.frame {
+    display: none;
+    clear: both;
+    /* margin-left: 1.2rem; */
+}
+.header {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: black;
+    margin-top:-2.8rem;
+    height: 2.8rem;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left:0;
+    transition: margin-top 0.6s;
+}
+hr{
+    border: 0;
+    background-color: rgb(48,48,48);
+    height: 1px;
+}
+.PageTitle{
+    font-size:29px;
+    font-family:Calibri light,'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    margin-left: 20px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--midGrey);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidenav span {
+    padding: 1rem 1rem 1rem 2rem;
+    text-decoration: none;
+    font-size: 36px;
+    color: rgb(200,200,250);
+    display: block;
+    font-family: Kunstler Script;
+    background-color: rgb(21, 101, 192);
+    overflow: hidden;
+    height: 5rem;
+}
+.sidenav > .profile-photo{
+    margin-top:0;
+}
+.sidenav span img{
+    width:2.5rem;
+    height:2.5rem;
+    vertical-align: middle;
+    border-radius: 100%;
+    border: 1px solid rgb(200,200,250);
+}
+.sidenav span text{
+margin-top:.2rem;
+}
+.sidenav hr {
+    border-color: rgb(48, 48, 48);
+    margin:0.19rem;
+}
+
+.sidenav a {
+    padding: 1rem 1rem 1rem 2rem;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: rgb(48, 48, 48,0.48);
+    cursor: pointer;
+}
+
+.sidenav a.active {
+    color: #f1f1f1;
+    background-color: rgb(48, 48, 48);
+}
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 19px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+.modalTitle{
+    text-align: center;
+}
+/* Modal Content (image) */
+.modal-carousel{
+    display: flex;
+    height: 16rem;
+}
+.modal-content.infocus{
+    margin: auto;
+    max-width: 90%;
+    max-height: 15rem;
+    transition: margin 1s;
+    display:block;
+}
+.modal-content{
+    margin-top: 20%;
+    margin-left:1rem;
+    margin-right: 1rem;
+    max-width: 1%;
+    max-height: 3rem;
+    display:none;
+}
+/* Navigation arrows */
+.navigator{
+    position: fixed;
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.fa-angle-left,.fa-angle-right{
+    color:orangered;
+    cursor: pointer;
+}
+.fa-angle-left:hover,.fa-angle-right:hover,.fa-angle-left.active,.fa-angle-right.active{
+    color:rgb(128, 40, 8);
+}
+
+
+/* Caption of Modal Image */
+
+.modal-desc {
+    margin:auto;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    color: #ccc;
+    padding: 1rem 1rem ;
+    height: auto;
+    font-size: 1.2rem;
+}
+/* Add Animation */
+
+.modal-carousel,
+.modal-desc {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+/* Specific styles */
+.profile-tile{
+    align-self: center;
+    width: 100%;
+    padding: .2rem;
+    margin-top: 1rem;
+    margin-right:auto;
+    margin-left: auto;
+}
+.info-container{
+    display: flex;
+    width:100%;
+    align-content: center;
+    margin:0;
+}
+.info{
+    border-left: 1px solid white;
+    padding-left: 1rem;
+    padding-top: 0;
+    min-height: 14rem;
+    margin:0 auto;
+}
+.photo-container{
+    width:100%;
+    text-align: center;
+    margin:0;
+}
+.profile-photo{
+    width:auto;
+    height:auto;
+    max-width: 14rem;
+    max-height: 14rem;
+    border-radius: 100%;
+}
+.profile-name{
+    font-size: 5rem;
+    font-weight: 100;
+    margin:0;
+    /* line-height: 1.5px; */
+}
+.primary-txt{
+    color: var(--primary-color);
+}
+.profile-designation{
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+#AboutMe div li,p{
+    list-style: none;
+    font-size: 1.2rem;
+}
+#AboutMe div li::before{
+    content: "➮";
+    padding-right: .4rem;
+}
+#AboutMe div h2{
+    font-size: 2.1rem;
+    border-bottom: 1px solid rgb(48, 48, 48);
+}
+#AboutMe>div:nth-child(1){
+    margin-top: 2rem;
+}
+#Contact{
+    align-content: center;
+    margin:1rem auto;
+}
+#Contact .line{
+    padding:1rem 0;
+    color: rgb(172, 172, 172);
+    font-size: 1.6rem;
+}
+#Contact div.tile{
+    margin-top:1rem;
+    padding: 2rem;
+    display: block;
+    /* width: 20rem; */
+    border:0.6rem solid transparent;
+}
+#Contact>div:last-child{
+    text-align:center;
+}
+.tile{
+    background-color: var(--lightGrey);
+    border-radius: 0.4rem;
+    padding: 2rem;
+}
+.tile i{
+    font-size: 2rem;
+}
+.tile h2{
+    margin-top:0;
+}
+.tile:hover{
+box-shadow: 0px 0px 91px rgb(0,0,0);
+}
+.fa-calendar{
+    float: right;
+    margin-right: 1rem;
+}
+.moreActions{
+    position: relative;
+    top:-1rem;
+    color:  rgb(48,48,48);
+    margin-left: 0.6rem;
+    /* font-size:2rem; */
+}
+.moreActions:hover{
+    color:  white;
+}
+.moreActions.active{
+    color:white;
+}
+.moreActions.active div{
+    visibility: visible;
+    opacity: 1;
+}
+.moreActionsFlyout{
+    visibility: hidden;
+    width: 120px;
+    background-color:var(--midGrey);
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.2rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 1rem;
+  }
+.moreActionsFlyout::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    border-width: 0.6rem;
+    border-style: solid;
+    border-color: var(--midGrey) transparent transparent transparent;
+}
+
+.moreActionsFlyout a{
+    color: white;
+    display: block;
+    padding:0.2rem;
+    font-size: 1rem;
+    margin-top:0.2rem;
+    font-style:normal;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+.moreActionsFlyout a:hover{
+    background-color: rgb(48, 48, 48,0.48);
+}
+.utility-tile{
+    margin-top:1rem;
+    padding: 0.1rem;
+}
+.utility-tile *{
+    cursor: pointer;
+}
+.utility-tile h2{
+    position: relative;
+    text-align: center;
+    margin: 0;
+    top:-1rem;
+}
+.thumbnail{
+    width: 100%;
+    height: 82%;
+    object-fit: cover;
+}
+/* Add Animation */
+
+#home .info {
+    animation-name: flyout-info;
+    animation-duration: 1.2s;
+}
+@keyframes flyout-info {
+    from {
+        margin-top: 15rem;
+    }
+    to {
+        margin-top: 0rem;
+    }
+}
+#home .profile-photo {
+    animation-name: flyout-profile-photo;
+    animation-duration: 1.2s;
+}
+@keyframes flyout-profile-photo {
+    from {
+        margin-top: -15rem;
+    }
+    to {
+        margin-top: 0rem;
+    }
+}
+
+   /* The Close Button */
+
+   .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 2.5rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+    padding-top: 2.4rem;
+}
+.PageTitle:hover,
+.burgerMenu:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px rgb(28, 1, 46), 0 0 30px rgb(28, 1, 46), 0 0 40px rgb(28, 1, 46), 0 0 55px rgb(28, 1, 46), 0 0 75px rgb(28, 1, 46);
+}
+
+#hdSymbol {
+    width: 220px;
+    height: 220px;
+    border-radius: 300px;
+    padding: 0px;
+    margin: 1.6% auto;
+    background-color: rgb(17, 17, 17);
+    border: 10px solid transparent;
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  } 
+@media only screen and (min-width:600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+@media only screen and (orientation:landscape) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .row{
+        display:flex;
+        justify-content: space-between;
+        height: auto;
+    }
+    .row ul{
+        width:49%;
+        min-height: 14rem;
+        float: left;
+    }
+    .utilities{
+        display: flex;
+        justify-content: center;
+        margin-top: 9%;
+    }
+    .utility-tile{
+        margin: 1rem;
+        width: 24rem;
+        height: 24rem;
+    }
+    .profile-name{
+        font-size: 6rem;
+    }
+    .frame{
+        margin-left: 1.2rem;
+    }
+    #Contact>div{
+        display:flex;
+        justify-content: space-between;
+    }
+    .photo-container{
+        width:fit-content;
+        padding-right:2rem;
+    }
+    .profile-tile{
+        width: fit-content;
+        margin-top: 8rem;
+        display: flex;
+        justify-content: center;
+    }
+    #hdSymbol{
+        width:300px;
+        height:300px;
+    }
+    .modal-carousel{
+        height: 29rem;
+    }
+    .modal-content.infocus{
+        max-height: 28rem;
+    }
+    .modal-desc {
+        padding: 1rem 5rem;
+    }
+  }
