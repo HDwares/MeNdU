@@ -285,11 +285,11 @@ margin-top:.2rem;
     font-size: 1.6rem;
 }
 #Contact div.tile{
-    margin-top:1rem;
     padding: 2rem;
     display: block;
-    /* width: 20rem; */
+    width: 100%;
     border:0.6rem solid transparent;
+    box-shadow: none;
 }
 #Contact>div:last-child{
     text-align:center;
@@ -431,7 +431,15 @@ box-shadow: 0px 0px 91px rgb(0,0,0);
     text-decoration: none;
     cursor: pointer;
 }
-
+.colored-tile:hover{
+box-shadow: 0px 0px 91px rgb(0,0,0);
+}
+.colored-tile{
+    background:transparent;
+    padding:0.6rem;
+    border-radius: 0.4rem;
+    width: 22rem;
+}
 /* 100% Image Width on Smaller Screens */
 
 @media only screen and (max-width: 700px) {
@@ -463,7 +471,7 @@ box-shadow: 0px 0px 91px rgb(0,0,0);
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
-  } 
+  }
 @media only screen and (min-width:600px) {
     /* For tablets: */
     .col-s-1 {width: 8.33%;}
