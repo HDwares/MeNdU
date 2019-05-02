@@ -47,7 +47,7 @@ function openPage(evt, pageName) {
     }
     else if (pageName === "Contact") {
         createColoredShadow(document.getElementById("hdSymbol"));
-        contactTiles = document.querySelectorAll("#Contact .tile");
+        contactTiles = document.querySelectorAll("#Contact .colored-tile");
         for (let i = 0; i < contactTiles.length; i++) {
             createColoredBorder(contactTiles[i]);
         }
@@ -160,12 +160,13 @@ function crtSybl(lineColor) {
         hdSymbol.src = dark;
     });
 } function createColoredBorder(element) {
-    let elementBorder = event.target.style.border;
+    let elementBackground = event.target.style.background;
     element.addEventListener("mousemove", function (event) {
-        element.style.border = ".6rem solid rgb(" + event.offsetX + ", " + (3 * event.offsetY - event.offsetX) + ", " + (192 - 3 * event.offsetY) + ")";
+        element.style.background = `linear-gradient(to right, rgb(${346-event.offsetX}, 0, ${event.offsetX}), rgb(${255-event.offsetX}, ${255-event.offsetX}, ${event.offsetX}), rgb(${event.offsetX}, ${255-event.offsetX}, ${event.offsetX}), rgb(${event.offsetX}, ${255-event.offsetX}, ${255-event.offsetX}), rgb(${event.offsetX+61}, ${event.offsetX-255}, ${191-event.offsetX}))`;
     });
+    // rgb(255, 0, 0), rgb(255, 255, 0), rgb(0, 255, 255), rgb(0, 255, 0), rgb(255, 200, 0)
     element.addEventListener("mouseleave", function (event) {
-        element.style.border = elementBorder;
+        element.style.background = elementBackground;
     });
 }
 function capitalizeFirstLetter(string) {
